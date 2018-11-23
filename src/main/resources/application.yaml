@@ -1,0 +1,30 @@
+server:
+  context-path: /springboot-auction
+  jsp-servlet:
+    init-parameters:
+      development: true
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  http:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 2000MB
+    encoding:
+      charset: utf-8
+      force: true
+  profiles:
+    active: test
+
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: Mapper/*Mapper.xml
+
